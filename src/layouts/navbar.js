@@ -12,7 +12,7 @@ const AppNavBar = ({ children }) => {
                     <Navbar.Brand href="#home">XYZ Todos</Navbar.Brand>
                     <Nav className="me-auto">
                         <NavItem>
-                            <Link className="nav-link" to="/todos">Todos</Link>
+                            <Link className="nav-link" to="/home">Home</Link>
                         </NavItem>
                         <NavItem>
                             <Link className="nav-link" to="/login">Login</Link>

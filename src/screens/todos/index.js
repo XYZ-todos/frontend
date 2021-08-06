@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react' 
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { todoFetchReqest } from '../../helpers/apiHelper'
 import AppNavBar from '../../layouts/navbar'
-import NewTaskModal from '../../components/newTaskModal/index'
-const Tasks = () => {
+import NewTaskModal from '../../components/newTodoModal/index'
+import TodoCard from './../../components/todoCard/index'
+import { setTodos } from '../../state/actions/todo'
 
-    const [taskList, setTaskList] = useState([])
+const Tasks = () => {
+    const dispatch = useDispatch()
+    const todos = useSelector((state) => state.todo.todos)
+
     useEffect(() => {
         todoFetchReqest().then(res => {
-            setTaskList(res)
+            dispatch({ type: setTodos, payload: res })
         })
     }, [])
 
@@ -15,20 +20,23 @@ const Tasks = () => {
     return (
         <AppNavBar>
 
-          
-  
-            <NewTaskModal />  
+
+
+            <NewTaskModal />
 
             {
-                taskList.map(task => {
+                todos.map(task => {
                     return (
-                        <div>
-                            Title : {task.title}
-                            <br />
-                            Description : {task.description}
-                            <br />
-                            <br />
+
+                        <div key={task._id}> 
+                            <TodoCard
+                                id={task._id}
+                                title={task.title}
+                                description={task.description}
+                                active={task.active}
+                            />
                         </div>
+
                     )
                 })
             }

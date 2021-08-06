@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Login from "./screens/login/login";
 import Signup from "./screens/signup/signup";
-import Tasks from './screens/todos/index' 
+import Todos from './screens/todos/index' 
 import { Container } from "react-bootstrap";
 
 const App =() =>{
@@ -18,7 +18,8 @@ const App =() =>{
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/todos" component={Tasks} />
+            <Route exact path="/home" component={Todos} />
+            <Route exact path="/" component={Todos} />
             {/* <Route exact path="/write" component={WritingScreen} /> */}
             {/* <Route exact path="/article/:id" component={DetailedArticleScreen} /> */}
             {/* <GuardedRoute  path='/manage' component={ManageScreen}/> */}

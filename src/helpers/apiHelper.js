@@ -3,18 +3,24 @@ import { baseURL } from '../config/apiConfig';
 
 const performRequest = async (method, url, data) => {
     const token = localStorage.getItem("xyz-todos") || "";
-    return await axios({
-        baseURL: `${baseURL}`,
-        url: url,
-        method: method,
-        data: data,
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: token ? `Bearer ${token}` : "",
-        },
-    }).then(res => {
-        return res.data;
-    })
+    try {
+
+
+        return await axios({
+            baseURL: `${baseURL}`,
+            url: url,
+            method: method,
+            data: data,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: token ? `Bearer ${token}` : "",
+            },
+        }).then(res => {
+            return res.data;
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 
@@ -44,10 +50,37 @@ export const todoFetchReqest = async () => {
     );
 };
 
-export const createTodo = async (title, description ) => {
+export const createTodo = async (title, description) => {
+    console.log(title, description)
     return await performRequest(
         "POST",
-        "todos/getTodos",
+        "todos/add",
         { title, description }
+    );
+};
+
+export const deleteTodo = async (id) => {
+    console.log(id)
+    return await performRequest(
+        "DELETE",
+        `todos/delete/${id}`
+    );
+};
+
+export const updateTodo = async (id, title, description) => {
+    console.log(id)
+    return await performRequest(
+        "PUT",
+        `todos/update/${id}`,
+        { title, description }
+    );
+};
+
+
+export const completeTodo = async (id) => {
+    console.log(id)
+    return await performRequest(
+        "PUT",
+        `todos/complete/${id}` 
     );
 };

@@ -26,7 +26,7 @@ function Login() {
       console.log(res)
       localStorage.setItem('xyz-todos', res.token)
     }).then(() => {
-      history.push('/todos')
+      history.push('/')
     }).catch(e => {
       //todo  - show toast when the user failed authentication
       console.log(e)
