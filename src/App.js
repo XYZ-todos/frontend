@@ -1,21 +1,33 @@
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  BrowserRouter
+} from "react-router-dom";
+import Login from "./screens/login/login";
+import Signup from "./screens/signup/signup";
+import Tasks from './screens/todos/index' 
+import { Container } from "react-bootstrap";
+
+const App =() =>{
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter >
+      
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/todos" component={Tasks} />
+            {/* <Route exact path="/write" component={WritingScreen} /> */}
+            {/* <Route exact path="/article/:id" component={DetailedArticleScreen} /> */}
+            {/* <GuardedRoute  path='/manage' component={ManageScreen}/> */}
+            {/* <Route exact path="/manage" component={ManageScreen} /> */}
+
+          </Switch>
+ 
+       </BrowserRouter>
+  </div>
   );
 }
 
