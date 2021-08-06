@@ -15,10 +15,13 @@ const AppNavBar = ({ children }) => {
                             <Link className="nav-link" to="/home">Home</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link" to="/history">History</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to="/summery">Summery</Link>
+                            <Link className="nav-link" to="/summary">Summary</Link>
+                        </NavItem>
+                        <NavItem>
+                            <Link className="nav-link" to="/login">Login</Link>
                         </NavItem>
                     </Nav>
                 </Container>

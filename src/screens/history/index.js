@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchActiveTodos } from '../../helpers/apiHelper'
+import { fetchAlltodos } from '../../helpers/apiHelper'
 import AppNavBar from '../../layouts/navbar'
 import NewTaskModal from '../../components/newTodoModal/index'
-import TodoCard from './../../components/todoCard/index'
-import { setTodos } from '../../state/actions/todo'
+import HistoryCard from './../../components/todoHistoryCard/index'
 
-const Tasks = () => {
-    const dispatch = useDispatch()
-    const todos = useSelector((state) => state.todo.todos)
+const History = () => {
+    const [todos, setTodos] = useState([])
 
     useEffect(() => {
-        fetchActiveTodos().then(res => {
-            dispatch({ type: setTodos, payload: res })
+        fetchAlltodos().then(res => {
+            setTodos(res)
         })
     }, [])
 
@@ -22,15 +19,11 @@ const Tasks = () => {
 
 
 
-            <NewTaskModal />
-
             {
                 todos.map(task => {
                     return (
-
-                        <div key={task._id}> 
-                            <TodoCard
-                                id={task._id}
+                        <div key={task._id}>
+                            <HistoryCard
                                 title={task.title}
                                 description={task.description}
                                 active={task.active}
@@ -44,4 +37,4 @@ const Tasks = () => {
     )
 }
 
-export default Tasks
+export default History

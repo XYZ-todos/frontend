@@ -43,12 +43,21 @@ export const signUpReqest = async (email, password) => {
 };
 
 
-export const todoFetchReqest = async () => {
+export const fetchActiveTodos = async () => {
+    return await performRequest(
+        "GET",
+        "todos/getActiveTodos",
+    );
+};
+
+
+export const fetchAlltodos  = async () => {
     return await performRequest(
         "GET",
         "todos/getTodos",
     );
 };
+
 
 export const createTodo = async (title, description) => {
     console.log(title, description)
