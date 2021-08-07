@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom'
 
 
 const AppNavBar = ({ children }) => {
+
+    const logout = () => {
+        localStorage.removeItem('xyz-todos')
+    }
+
+
     return (
         <div>
             <Navbar bg="dark" variant="dark">
@@ -21,7 +27,7 @@ const AppNavBar = ({ children }) => {
                             <Link className="nav-link" to="/summary">Summary</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link" onClick={logout} >Logout</Link>
                         </NavItem>
                     </Nav>
                 </Container>
