@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Button from "react-bootstrap/Button";
 import { updateTodo } from '../../helpers/apiHelper';
 import { useDispatch } from 'react-redux';
-import { changeTodo, removeTodo } from '../../state/actions/todo';
+import { changeTodo  } from '../../state/actions/todo';
 
 
 const Index = ({ id, title, description }) => {

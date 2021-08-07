@@ -5,6 +5,9 @@ import AppNavBar from '../../layouts/navbar'
 import NewTaskModal from '../../components/newTodoModal/index'
 import TodoCard from './../../components/todoCard/index'
 import { setTodos } from '../../state/actions/todo'
+import './index.css'
+import { Container } from 'react-bootstrap'
+
 
 const Tasks = () => {
     const dispatch = useDispatch()
@@ -19,27 +22,29 @@ const Tasks = () => {
 
     return (
         <AppNavBar>
+            <Container>
 
 
+                <div className="createNewTodoContainer">
+                    <NewTaskModal />
+                </div>
 
-            <NewTaskModal />
+                {
+                    todos.map(task => {
+                        return (
 
-            {
-                todos.map(task => {
-                    return (
+                            <div key={task._id}>
+                                <TodoCard
+                                    id={task._id}
+                                    title={task.title}
+                                    description={task.description}
+                                    active={task.active}
+                                />
+                            </div>
 
-                        <div key={task._id}> 
-                            <TodoCard
-                                id={task._id}
-                                title={task.title}
-                                description={task.description}
-                                active={task.active}
-                            />
-                        </div>
-
-                    )
-                })
-            }
+                        )
+                    })
+                }</Container>
         </AppNavBar>
     )
 }

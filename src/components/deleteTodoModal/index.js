@@ -32,18 +32,17 @@ const Index = ({ id, title }) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton >
-          <Modal.Title>Delete todo : {title}</Modal.Title>
+          <Modal.Title>Do you want to delete todo {title} ?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-
-          <Button variant="primary" onClick={handleSubmit}>
-            Delete
+        <Modal.Footer> 
+          <Button variant="danger" onClick={handleSubmit}>
+            Yes
           </Button>
 
           <Button variant="secondary" onClick={handleClose}>
-            Cancel
+            No
           </Button>
-        </Modal.Body>
+          </Modal.Footer>
 
       </Modal>
     </>
