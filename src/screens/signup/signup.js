@@ -77,7 +77,7 @@ function Signup() {
         </Container>
       </div>
 
-      <ToastWrapper show={showToggle} description={'Error occured while sign up'} toggleshow={toggleshow} />
+      <ToastWrapper show={showToggle} description={'Error occurred while sign up'} toggleshow={toggleshow} />
     </>
 
   )

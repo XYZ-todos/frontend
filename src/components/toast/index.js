@@ -6,7 +6,7 @@ const ToastWrapper = ({ show = false, toggleshow, description }) => {
 
     return (
         <div className="toastWrapperRow"> 
-                <Toast show={show} onClose={toggleshow} bg={'danger'} delay={15000} autohide className="toast">
+                <Toast show={show} onClose={toggleshow} bg={'danger'} delay={1500} autohide className="toast">
                     <Toast.Header>
                         <img
                             src="holder.js/20x20?text=%20"

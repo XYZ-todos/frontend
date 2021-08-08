@@ -109,7 +109,7 @@ function Login() {
         </Container>
       </div>
 
-      <Toast show={showToggle} description={'Error occured while login'} toggleshow={toggleshow} />
+      <Toast show={showToggle} description={'Error occurred while login'} toggleshow={toggleshow} />
     </>
   )
 }
