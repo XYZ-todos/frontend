@@ -7,14 +7,9 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import { loginReqest } from '../../helpers/apiHelper';
-import Toast from '../../components/toast';
-import { Formik, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import Toast from '../../components/toast';  
 
-
-
-function Login() {
-
+function Login() { 
 
   const history = useHistory();
   const [email, setEmail] = useState("");
@@ -23,41 +18,12 @@ function Login() {
 
 
   const toggleshow = () => setShowToggle(!showToggle);
-
-
-
-
-  //validation related 
-
-  const initialValues = {
-    email: "",
-    password: ""
-  };
-
-
-  const signInSchema = Yup.object().shape({
-    email: Yup.string().email().required("Email is required"),
-
-    password: Yup.string()
-      .required("Password is required")
-      .min(4, "Password is too short - should be 4 chars minimum"),
-  });
-
-  const submitForm = (values) => {
-    console.log(values);
-  };
-
-
-
-
-
-
-
-
+ 
 
   const validateForm = () => {
     return email.length > 0 && password.length > 0;
   }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(email, password)
@@ -75,9 +41,7 @@ function Login() {
     <>
       <div className="login">
         <Container>
-          <div className="loginHeader">Login </div>
-
-
+          <div className="loginHeader">Login </div> 
 
           <Form onSubmit={handleSubmit}>
             <Form.Group size="lg" controlId="email" className="formGroup">

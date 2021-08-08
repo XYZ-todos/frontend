@@ -24,15 +24,15 @@ const Index = ({ id, title, active, description }) => {
 
     return (
         <Container>
-            <Card className="toddoCardStyle">
+            <Card className='toddoCardStyle'>
                 <Card.Body>
                     <Card.Title>Title :- {title}</Card.Title>
                     <Card.Text>
                     Description :- {description}  
                     </Card.Text>
-                    <div className="buttonSpacing"><Button variant="primary" onClick={setComplete}>Complete</Button></div>
-                    <div className="buttonSpacing"> <UpdateTodo title={title} id={id} description={description} /></div>
-                    <div className="buttonSpacing"><DeleteTodo title={title} id={id} /></div>
+                    <div className='buttonSpacing'><Button variant='primary' onClick={setComplete}>Complete</Button></div>
+                    <div className='buttonSpacing'> <UpdateTodo title={title} id={id} description={description} /></div>
+                    <div className='buttonSpacing'><DeleteTodo title={title} id={id} /></div>
                 </Card.Body>
             </Card>
         </Container>

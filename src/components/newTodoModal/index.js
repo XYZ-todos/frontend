@@ -1,9 +1,9 @@
 import { Form, Modal } from 'react-bootstrap'
 import React, { useState } from 'react'
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 import { createTodo } from '../../helpers/apiHelper';
 import { useDispatch } from 'react-redux';
-import { addTodo, setTodos } from '../../state/actions/todo';
+import { addTodo  } from '../../state/actions/todo';
 
 
 const Index = () => {
@@ -12,8 +12,8 @@ const Index = () => {
   const dispatch = useDispatch()
 
   const [formData, setFormData] = useState({
-    title: "",
-    description: ""
+    title: '',
+    description: ''
   })
 
   const handleChange = (key, value) => {
@@ -26,7 +26,7 @@ const Index = () => {
   const handleClose = () => {
     setShow(false);
   }
-
+ 
   const handleSubmit = () => {
     createTodo(formData.title, formData.description).then(res => {
       dispatch({ type: addTodo, payload: res })
@@ -39,7 +39,7 @@ const Index = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant='primary' onClick={handleShow}>
         Create a new todo
       </Button>
 
@@ -49,21 +49,21 @@ const Index = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
               <Form.Label>Title</Form.Label>
-              <Form.Control type="text" value={formData.title} onChange={(e) => handleChange('title', e.target.value)} />
+              <Form.Control type='text' value={formData.title} onChange={(e) => handleChange('title', e.target.value)} />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" rows={3} value={formData.description} onChange={(e) => handleChange('description', e.target.value)} />
+              <Form.Control as='textarea' rows={3} value={formData.description} onChange={(e) => handleChange('description', e.target.value)} />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleSubmit}>
+          <Button variant='primary' onClick={handleSubmit} >
             Save
           </Button>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant='secondary' onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>

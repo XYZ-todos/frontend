@@ -5,7 +5,7 @@ import './index.css'
 const HistoryCard = ({ title, active, description }) => {
     return (
         <Container>
-            <Card className="toddoCardStyle">
+            <Card className='toddoCardStyle'>
                 <Card.Body>
                     <Card.Title>Title  -:  {title}</Card.Title>
                     <Card.Text>

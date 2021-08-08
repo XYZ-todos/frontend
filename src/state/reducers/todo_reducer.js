@@ -26,7 +26,7 @@ export const todoReducer = (state = intialState, action) => {
             const fliteredTodos = state.todos.filter(todo => todo._id !== action.payload._id)
             return {
                 ...state,
-                todos: [   ...fliteredTodos , action.payload]
+                todos: [  action.payload  ,...fliteredTodos ]
 
             }
 
