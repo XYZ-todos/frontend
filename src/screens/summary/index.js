@@ -13,7 +13,7 @@ const StatusCard = ({ type, amount = 0 }) => {
     return (
         <div className={type == 'Active' ? 'statusCardActive' : 'statusCardCompleted'}>
             {type} Todos
-            <div className="statusAmount">  {amount}</div>
+            <div className='statusAmount'>  {amount}</div>
         </div>
     )
 }
@@ -52,12 +52,12 @@ const History = () => {
 
     return (
         <AppNavBar>
-            <Row className="statusRow" >
+            <Row className='statusRow' >
                 <Col md={3}>
-                    <StatusCard type="Active" amount={todos.active.length} />
+                    <StatusCard type='Active' amount={todos.active.length} />
                 </Col>
                 <Col md={3}>
-                    <StatusCard type="Completed" amount={todos.completed.length} />
+                    <StatusCard type='Completed' amount={todos.completed.length} />
                 </Col>
             </Row>
             <Container>

@@ -25,7 +25,7 @@ const Tasks = () => {
             <Container>
 
 
-                <div className="createNewTodoContainer">
+                <div className='createNewTodoContainer'>
                     <NewTaskModal />
                 </div>
 

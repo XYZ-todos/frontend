@@ -2,7 +2,7 @@ import axios from 'axios'
 import { baseURL } from '../config/apiConfig';
 
 const performRequest = async (method, url, data) => {
-    const token = localStorage.getItem("xyz-todos") || "";
+    const token = localStorage.getItem('xyz-todos') || '';
     try {
 
 
@@ -12,8 +12,8 @@ const performRequest = async (method, url, data) => {
             method: method,
             data: data,
             headers: {
-                "Content-Type": "application/json",
-                Authorization: token ? `Bearer ${token}` : "",
+                'Content-Type': 'application/json',
+                Authorization: token ? `Bearer ${token}` : '',
             },
         }).then(res => {
             return res.data;
@@ -27,8 +27,8 @@ const performRequest = async (method, url, data) => {
 
 export const loginReqest = async (email, password) => {
     return await performRequest(
-        "POST",
-        "/users/login",
+        'POST',
+        '/users/login',
         { password, email },
     );
 };
@@ -36,8 +36,8 @@ export const loginReqest = async (email, password) => {
 
 export const signUpReqest = async (email, password) => {
     return await performRequest(
-        "POST",
-        "/users/signup",
+        'POST',
+        '/users/signup',
         { password, email },
     );
 };
@@ -45,16 +45,16 @@ export const signUpReqest = async (email, password) => {
 
 export const fetchActiveTodos = async () => {
     return await performRequest(
-        "GET",
-        "todos/getActiveTodos",
+        'GET',
+        'todos/getActiveTodos',
     );
 };
 
 
 export const fetchAlltodos  = async () => {
     return await performRequest(
-        "GET",
-        "todos/getTodos",
+        'GET',
+        'todos/getTodos',
     );
 };
 
@@ -62,8 +62,8 @@ export const fetchAlltodos  = async () => {
 export const createTodo = async (title, description) => {
     console.log(title, description)
     return await performRequest(
-        "POST",
-        "todos/add",
+        'POST',
+        'todos/add',
         { title, description }
     );
 };
@@ -71,7 +71,7 @@ export const createTodo = async (title, description) => {
 export const deleteTodo = async (id) => {
     console.log(id)
     return await performRequest(
-        "DELETE",
+        'DELETE',
         `todos/delete/${id}`
     );
 };
@@ -79,7 +79,7 @@ export const deleteTodo = async (id) => {
 export const updateTodo = async (id, title, description) => {
     console.log(id)
     return await performRequest(
-        "PUT",
+        'PUT',
         `todos/update/${id}`,
         { title, description }
     );
@@ -89,7 +89,7 @@ export const updateTodo = async (id, title, description) => {
 export const completeTodo = async (id) => {
     console.log(id)
     return await performRequest(
-        "PUT",
+        'PUT',
         `todos/complete/${id}` 
     );
 };

@@ -14,21 +14,21 @@ const AppNavBar = ({ children }) => {
 
     return (
         <div>
-            <Navbar bg="dark" variant="dark" className="navBar">
+            <Navbar bg='dark' variant='dark' className='navBar'>
                 <Container>
-                    <Navbar.Brand href="#home">XYZ Todos</Navbar.Brand>
-                    <Nav className="me-auto">
+                    <Navbar.Brand href='#home'>XYZ Todos</Navbar.Brand>
+                    <Nav className='me-auto'>
                         <NavItem>
-                            <Link className="nav-link" to="/home">Home</Link>
+                            <Link className='nav-link' to='/home'>Home</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to="/history">History</Link>
+                            <Link className='nav-link' to='/history'>History</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to="/summary">Summary</Link>
+                            <Link className='nav-link' to='/summary'>Summary</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" onClick={logout} >Logout</Link>
+                            <Link className='nav-link' onClick={logout} >Logout</Link>
                         </NavItem>
                     </Nav>
                 </Container>

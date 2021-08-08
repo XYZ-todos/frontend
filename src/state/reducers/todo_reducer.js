@@ -1,4 +1,4 @@
-import { addTodo, changeTodo, removeTodo, setTodos } from "../actions/todo";
+import { addTodo, changeTodo, removeTodo, setTodos } from '../actions/todo';
 
 const intialState = {
     todos: []
@@ -26,7 +26,7 @@ export const todoReducer = (state = intialState, action) => {
             const fliteredTodos = state.todos.filter(todo => todo._id !== action.payload._id)
             return {
                 ...state,
-                todos: [  action.payload  ,...fliteredTodos ]
+                todos: [action.payload, ...fliteredTodos]
 
             }
 
