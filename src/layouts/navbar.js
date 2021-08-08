@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Nav, NavItem } from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
+import './index.css'
 
 
 const AppNavBar = ({ children }) => {
@@ -13,7 +14,7 @@ const AppNavBar = ({ children }) => {
 
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" className="navBar">
                 <Container>
                     <Navbar.Brand href="#home">XYZ Todos</Navbar.Brand>
                     <Nav className="me-auto">

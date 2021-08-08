@@ -1,7 +1,5 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
+import { 
+  Switch, 
   BrowserRouter
 } from "react-router-dom";
 import Login from "./screens/login/login";
@@ -19,7 +17,6 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter >
-
         <Switch>
           <OuterPageGuard exact path="/login" component={Login} />
           <OuterPageGuard exact path="/signup" component={Signup} />
@@ -27,13 +24,7 @@ const App = () => {
           <InnerPageGuard exact path="/home" component={Todos} />
           <InnerPageGuard exact path="/summary" component={Summary} />
           <InnerPageGuard exact path="/" component={Todos} />
-          {/* <Route exact path="/write" component={WritingScreen} /> */}
-          {/* <Route exact path="/article/:id" component={DetailedArticleScreen} /> */}
-          {/* <GuardedRoute  path='/manage' component={ManageScreen}/> */}
-          {/* <Route exact path="/manage" component={ManageScreen} /> */}
-
         </Switch>
-
       </BrowserRouter>
     </div>
   );

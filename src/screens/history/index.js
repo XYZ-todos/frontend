@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { fetchAlltodos } from '../../helpers/apiHelper'
 import AppNavBar from '../../layouts/navbar'
-import NewTaskModal from '../../components/newTodoModal/index'
 import HistoryCard from './../../components/todoHistoryCard/index'
+import Footer from './../../components/footer/index'
 
 const History = () => {
     const [todos, setTodos] = useState([])
@@ -16,9 +16,6 @@ const History = () => {
 
     return (
         <AppNavBar>
-
-
-
             {
                 todos.map(task => {
                     return (
@@ -33,6 +30,8 @@ const History = () => {
                     )
                 })
             }
+
+            <Footer />
         </AppNavBar>
     )
 }

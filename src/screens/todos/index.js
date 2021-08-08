@@ -7,7 +7,7 @@ import TodoCard from './../../components/todoCard/index'
 import { setTodos } from '../../state/actions/todo'
 import './index.css'
 import { Container } from 'react-bootstrap'
-
+import Footer from './../../components/footer'
 
 const Tasks = () => {
     const dispatch = useDispatch()
@@ -45,6 +45,7 @@ const Tasks = () => {
                         )
                     })
                 }</Container>
+                <Footer />
         </AppNavBar>
     )
 }

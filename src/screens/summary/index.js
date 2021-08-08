@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import './index.css'
 import { Container } from 'react-bootstrap'
+import Footer from './../../components/footer'
 
 
 const StatusCard = ({ type, amount = 0 }) => {
@@ -88,13 +89,13 @@ const History = () => {
                                             active={task.active}
                                         />
                                     </div>
-
                                 )
                             })
                         }
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </AppNavBar>
     )
 }
